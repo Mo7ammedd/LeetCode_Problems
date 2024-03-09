@@ -1,24 +1,17 @@
-using System;
-using System.Collections.Generic;
-
-public class Solution
+public class Solution 
 {
     public int[] TwoSum(int[] nums, int target)
     {
-        Dictionary<int, int> numDict = new Dictionary<int, int>();
-
         for (int i = 0; i < nums.Length; i++)
         {
-            int complement = target - nums[i];
-
-            if (numDict.ContainsKey(complement))
+            for (int j = i + 1; j < nums.Length; j++)
             {
-                return new int[] { numDict[complement], i };
+                if (nums[i] + nums[j] == target)
+                {
+                    return new int[] { i, j };
+                }
             }
-
-            numDict[nums[i]] = i;
         }
-
-        return null;
+        return new int[0];
     }
 }

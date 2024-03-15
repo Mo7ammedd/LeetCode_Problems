@@ -1,19 +1,19 @@
 public class Solution {
     public int[] ProductExceptSelf(int[] nums) {
         int n = nums.Length;
-        int[] productCalculated = new int[n];
+        int[] productC = new int[n];
 
-        int leftProduct = 1;
+        int left = 1;
         for (int i = 0; i < n; i++) {
-            productCalculated[i] = leftProduct;
+            productC[i] = left;
 
         }
-        int rightProduct = 1;
+        int right = 1;
         for (int i = n - 1; i >= 0; i--) {
-            productCalculated[i] *= rightProduct;
+            productC[i] *= right;
 
-            rightProduct *= nums[i];
+            right *= nums[i];
         }
-        return productCalculated;
+        return productC;
     }
 }
